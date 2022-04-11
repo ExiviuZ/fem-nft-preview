@@ -1,0 +1,147 @@
+:root {
+    /* Primary */
+--soft-blue: hsl(215, 51%, 70%);
+--cyan: hsl(178, 100%, 50%);
+
+/* Neutral */
+--very-dark-blue-main-bg: hsl(217, 54%, 11%);
+--very-dark-blue-card-bg: hsl(216, 50%, 16%);
+--very-dark-blue-line-bg: hsl(215, 32%, 27%);
+--white: hsl(0, 0%, 100%);
+font-size: 18px;
+
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    font-family: 'Outfit' , sans-serif;
+    display: flex;
+    color: var(--white);
+    background-color: var(--very-dark-blue-line-bg);
+}
+
+.container {
+    width: 25%;
+    margin: auto;
+    padding: 1rem;
+    gap: 1rem;
+    background-color: var(--very-dark-blue-card-bg);
+    box-shadow: 0px 0px 10px 0px rgba(128, 128, 128, 0.5);
+}
+
+.container, .img-container {
+    border-radius: 10px;
+    overflow: hidden;
+}
+.nft-photo {
+    width: 100%;
+    display: block;
+    transition: opacity 250ms ease-out;
+
+}
+.img-container {
+    position: relative;
+}
+.img-container:hover {
+    background-color: --;
+}
+.img-container:hover::before{
+    opacity: 1;
+}
+
+.img-container::before{
+    position: absolute;
+    content: url('images/icon-view.svg');
+    display: block;
+    top: 50%;  
+    left: 50%; 
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: opacity 250ms ease-out;
+}
+
+
+.nft-photo:hover {
+    opacity: 0.5;
+}
+
+.author {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.author-photo {
+    height: 30px;
+    border-radius: 50%;
+    border: 1px solid white;
+}
+
+.price-day{
+    display: flex;
+    justify-content: space-between;
+}
+
+.price-day, .description, .author {
+    font-size: 0.8rem;
+}
+
+.price img, .clock img {
+    display: inline-block;
+}
+
+.author, .description, .clock {
+    color: var(--soft-blue);
+}
+
+.author-name {
+    color: var(--white);
+}
+
+.price {
+    color: var(--cyan);
+}
+
+.author-name:hover, .title:hover {
+    color: var(--cyan);
+}
+
+.price >span, .clock >span {
+display: flex;
+gap: 0.2rem;
+}
+
+hr {
+    display: block;
+    background-color: var(--very-dark-blue-line-bg);
+    border: none;
+    height: 2px;
+}
+
+.title, .author-name {
+    transition: color 0.5s ease-out;
+    cursor: default;
+}
+
+@media (max-width:350px) {
+    .container {
+        width: 80%;
+    }
+}
+
+@media (min-width:351px) {
+    .container{
+        width: 50%;
+    }
+}
+@media (min-width:600px) {
+    .container{
+        width: 25%;
+    }
+}
